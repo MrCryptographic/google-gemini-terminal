@@ -20,7 +20,7 @@ Open Terminal by pressing `Win+X` and clicking Terminal:
 After that, press `Ctrl+,` and click `+ Add a new profile` on the sidebar, then click `+ New Empty Profile`.
 Name it anything you want, preferably `Google Gemini`.
 
-Click on the `Command Line` dropdown. In here, type `py "C:\paste\your\path\here.py"` (replace that path with your copied one).
+Click on the `Command Line` dropdown. Type `py "C:\paste\your\path\here.py"` (replace that path with your copied one).
 Click on `Starting Directory` and put `C:\Users\[YourUser]\Desktop`, replace [YourUser] with your user, it should be visible in the terminal (non admin) when you open Windows PowerShell.
 [OPTIONAL] Make a tab title and put anything you want.
 
@@ -29,5 +29,12 @@ Click Appearance at the bottom of your profile settings, and choose your font we
 You can also make your own Color Scheme in the Color Scheme section in the terminal settings (if you aren't in the terminal settings already, press `Win+X` and click terminal, then press `Ctrl+,`)
 ![Screenshot (4)](https://github.com/user-attachments/assets/6da8954c-306e-4ed9-acec-8556e91370b2)
 
-## Step 4 - Set up the API keys for your Google Gemini.
+## Step 4 - Set up the API key for your Google Gemini.
+You're probably wondering why it doesn't work yet, and that's because you need an API key.
 Go to [Google AI Studio](https://aistudio.google.com) and click `🔑 Get API Key`
+![Screenshot (5)](https://github.com/user-attachments/assets/27ae7603-0246-498c-b2de-2a55bebe0cca)
+Copy your key and head to the folder you created in Step 1, right-click the `.py` file, click `Open with...`, and click `Notepad`.
+
+In this empty text box, paste in the code from the [Assets](https://github.com/MrCryptographic/google-gemini-terminal/blob/main/Assets/geminiterminal.py) folder.
+
+
