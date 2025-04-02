@@ -59,22 +59,35 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 # File to store chat history
 HISTORY_FILE = os.path.expanduser("~/.gemini_chat_history.json")
 
+# System instructions to guide the AI
+SYSTEM_INSTRUCTIONS = {
+    "role": "system",
+    "parts": [
+        "You are running in a terminal because the user used the Google Gemini API to create a text-based chatbot interface. "
+        "Respond concisely, format outputs clearly, and act like a helpful AI assistant inside a command-line environment."
+    ]
+}
+
 def load_history():
-    """Loads chat history from a file."""
+    """Loads chat history from a file and ensures system instructions are included."""
     if os.path.exists(HISTORY_FILE):
         try:
             with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                history = json.load(f)
+                # Ensure system instructions are always present
+                if history and history[0]["role"] != "system":
+                    history.insert(0, SYSTEM_INSTRUCTIONS)
+                return history
         except json.JSONDecodeError:
-            return []  # Return empty history if the file is corrupted
-    return []
+            return [SYSTEM_INSTRUCTIONS]  # Reset history if file is corrupted
+    return [SYSTEM_INSTRUCTIONS]  # Start fresh with system instructions
 
 def save_history(history):
     """Saves chat history to a file."""
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
-def type_effect(text, speed=0.03):
+def type_effect(text, speed=0.02):
     """Simulates typing effect for output."""
     for char in text:
         sys.stdout.write(char)
@@ -95,9 +108,9 @@ def main():
                 save_history(chat_history)  # Save history before exiting
                 break
             elif user_input.lower() == "clear":
-                chat_history = []  # Reset history
+                chat_history = [SYSTEM_INSTRUCTIONS]  # Reset history but keep system message
                 save_history(chat_history)
-                print("Chat history cleared.")
+                print("Chat history cleared (system instructions retained).")
                 continue
 
             # Append user input to history
@@ -125,3 +138,5 @@ if __name__ == "__main__":
 Replace `your_google_api_key_here` with your actual api key from [Google AI Studio](https://aistudio.google.com).
 
 [OPTIONAL] Replace `gemini-1.5-flash` with any vaild Google Gemini models, but `gemini-1.5-flash` is valid and good for fast responses. See all vaild models [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models).
+
+[OPTIONAL] Replace the text in `SYSTEM_INSTRUCTIONS` with any instructions that you want to give the AI... Roleplay information, personalities, etc.
