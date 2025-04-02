@@ -8,6 +8,10 @@
 <details>
   <summary>You also need to install Python for your version</summary>
   Go to https://python.org and install the correct version.
+
+  Make sure to `Install in/as PATH`!
+
+  Also after installing, open a new Powershell window and run `pip install google.generativeai` as that is required for this to work.
 </details>
 
 ## Step 1 - Make the folder and create the Terminal profile.
