@@ -30,14 +30,14 @@ You can also make your own Color Scheme in the Color Scheme section in the termi
 ![Screenshot (4)](https://github.com/user-attachments/assets/6da8954c-306e-4ed9-acec-8556e91370b2)
 
 ## Step 4 - Set up the API key for your Google Gemini.
-You're probably wondering why it doesn't work yet, and that's because you need an API key.
+You're probably wondering why it doesn't work yet, and that's because you need an API key (if you already have a Google Gemini API Key, skip this step):
 Go to [Google AI Studio](https://aistudio.google.com) and click `🔑 Get API Key`
 ![Screenshot (5)](https://github.com/user-attachments/assets/27ae7603-0246-498c-b2de-2a55bebe0cca)
 Copy your key and head to the folder you created in Step 1, right-click the `.py` file, click `Open with...`, and click `Notepad`.
 
 In this empty text box, paste in the code from the [Assets](https://github.com/MrCryptographic/google-gemini-terminal/blob/main/Assets/geminiterminal.py) folder.
 
-**If you are having problems copying from there, paste in the code below.**
+**Or from here:**
 ```python
 import google.generativeai as genai
 import os
@@ -120,4 +120,4 @@ if __name__ == "__main__":
 ```
 Replace `your_google_api_key_here` with your actual api key from [Google AI Studio](https://aistudio.google.com).
 
-[OPTIONAL] Replace `gemini-1.5-flash` with any vaild Google Gemini models, but `gemini-1.5-flash` is good for fast responses. See all vaild models [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models).
+[OPTIONAL] Replace `gemini-1.5-flash` with any vaild Google Gemini models, but `gemini-1.5-flash` is valid and good for fast responses. See all vaild models [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models).
