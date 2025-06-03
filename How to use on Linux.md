@@ -6,3 +6,4 @@ In the folder where the `.py` file is located, right click, and click "Open in t
 
 In the terminal, enter the following below:
 ![Screenshot_20250603_135919](https://github.com/user-attachments/assets/678960aa-18e8-4d77-84de-47847f41219d)
+And press enter. It should run the it just fine.
