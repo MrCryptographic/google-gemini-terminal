@@ -1,4 +1,4 @@
-# Google Gemini in the Terminal (Windows 11 Only)
+# Google Gemini in the Terminal App (for Windows 11 Only)
 
 <details>
   <summary>You need an API key to use this code properly</summary>
@@ -140,3 +140,5 @@ Replace `your_google_api_key_here` with your actual api key from [Google AI Stud
 [OPTIONAL] Replace `gemini-1.5-flash` with any vaild Google Gemini models, but `gemini-1.5-flash` is valid and good for fast responses. See all vaild models [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models).
 
 [OPTIONAL] Replace the text in `SYSTEM_INSTRUCTIONS` with any instructions that you want to give the AI... Roleplay information, personalities, etc.
+
+Note: You can also just run the `.py` file. How to run on linux?
