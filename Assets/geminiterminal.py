@@ -9,7 +9,7 @@ API_KEY = "your_google_api_key_here"  # Replace with your actual API key
 genai.configure(api_key=API_KEY)
 
 # Initialize Gemini model
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 # File to store chat history
 HISTORY_FILE = os.path.expanduser("~/.gemini_chat_history.json")
